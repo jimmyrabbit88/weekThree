@@ -30,11 +30,13 @@ public class YourBooks {
     }
 
     public static void addBook(){
+        String isbn;
         Book book = new Book();
         book.setTitle(MyMethods.strInput("Please enter the Title of the book you want to add", "Add Title"));
         book.setPrice(MyMethods.floatInput("Please enter the price of the book you want to add", "Add Price"));
-        String isbn =MyMethods.strInput("Please enter the ISBN of the book you want to add", "Add ISBN");
-        //validateIsbn(isbn);
+        do {
+            isbn = MyMethods.strInput("Please enter the ISBN of the book you want to add", "Add ISBN");
+        }while (validateIsbn(isbn) == 1);
         book.setISBN(isbn);
         book.setNoPages(MyMethods.integerInput("Please enter the Number of Pages in the book you want to add", "Add Number of Pages"));
         myBooks[counter] = book;
@@ -59,7 +61,10 @@ public class YourBooks {
     public static int validateIsbn(String isbn){
         int len = isbn.length();
         if(len == 10 || len == 13){
-            return 1;
+            if (isbn.matches("[a-zA-Z0-9]*")){
+                return 1;
+            }
+            else return 0;
         }
         else
             return 0;
