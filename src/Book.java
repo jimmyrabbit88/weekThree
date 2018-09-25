@@ -54,6 +54,6 @@ public class Book {
     }
 
     public String toString(){
-        String str = "";
+        return ("Title : " + title + "\nPrice : " + price + "\nISBN : " + isbn + "\nNumber of Pages : " + noPages);
     }
 }
