@@ -36,7 +36,7 @@ public class YourBooks {
         book.setPrice(MyMethods.floatInput("Please enter the price of the book you want to add", "Add Price"));
         do {
             isbn = MyMethods.strInput("Please enter the ISBN of the book you want to add", "Add ISBN");
-        }while (validateIsbn(isbn) == 1);
+        }while (validateIsbn(isbn) == 0);
         book.setISBN(isbn);
         book.setNoPages(MyMethods.integerInput("Please enter the Number of Pages in the book you want to add", "Add Number of Pages"));
         myBooks[counter] = book;
