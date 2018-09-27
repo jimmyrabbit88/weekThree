@@ -16,7 +16,7 @@ public class Message {
     }
 
     public String toString(){
-        return ("From: " + sender + "\nTo: " + recipiant + "\n Message:\n");
+        return ("From: " + sender + "\nTo: " + recipiant + "\n Message:\n" + message);
     }
 
     public void setRecipiant(String recipiant){
