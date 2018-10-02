@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class BicycleDriver {
 
@@ -18,7 +19,7 @@ public class BicycleDriver {
 
         JOptionPane.showMessageDialog(null, (bike1.getOwnerName() + " ::: " + bike1.getPrice() + "\n" + bike2.getOwnerName() + " ::: " + bike2.getPrice()));
 
-
+        JOptionPane.showMessageDialog(null, "The value of both bikes is : " + (bike1.getPrice() + bike2.getPrice()) + " Euro");
 
 
     }
