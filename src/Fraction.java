@@ -33,16 +33,32 @@ public class Fraction {
     }
 
     public Fraction doAdd(Fraction fraction){
-        int tempDenL = this.denominator;
-        int tempDenR = fraction.denominator;
 
-        this.numerator = this.numerator*tempDenR;
-        this.denominator = this.denominator*tempDenR;
-
-        fraction.numerator = fraction.numerator*tempDenL;
-        fraction.denominator = fraction.denominator*tempDenL;
-
-        this.numerator = this.numerator + fraction.numerator;
-        return this;
+        int num = (this.numerator*fraction.denominator)+(fraction.numerator*this.denominator);
+        int den = (this.denominator*fraction.denominator);
+        Fraction ansFrac = new Fraction(num, den);
+        return ansFrac;
     }
+
+    public Fraction doSubtract(Fraction fraction){
+        int num = (this.numerator*fraction.denominator)-(fraction.numerator*this.denominator);
+        int den = (this.denominator*fraction.denominator);
+        Fraction ansFrac = new Fraction(num, den);
+        return ansFrac;
+    }
+
+    public static Fraction doMul(Fraction f1, Fraction f2){
+        int num = (f1.numerator * f2.numerator);
+        int den = (f1.denominator * f2.denominator);
+        Fraction ansFrac = new Fraction(num, den);
+        return ansFrac;
+    }
+
+    public static Fraction doDiv(Fraction f1, Fraction f2){
+        int num = (f1.numerator * f2.denominator);
+        int den = (f1.denominator * f2.numerator);
+        Fraction ansFrac = new Fraction(num, den);
+        return ansFrac;
+    }
+
 }
