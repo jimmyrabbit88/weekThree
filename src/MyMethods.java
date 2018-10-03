@@ -20,4 +20,5 @@ public class MyMethods {
         box1.setFont(new Font("monospaced", Font.PLAIN, 12));
         return box1;
     }
+
 }
